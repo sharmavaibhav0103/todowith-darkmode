@@ -1,0 +1,120 @@
+:root{
+    --bgColor: black;
+    --formColor: #191919;
+    --submitBtnColor: #333333;
+    --listColor: #2d283e;
+    --submitBtnTextColor: rgb(170, 165, 165);  
+    --colorWhite: white;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open sans',sans-serif;
+    transition: all 200ms;
+}
+body{
+    background-color: var(--bgColor);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+.todo-form{
+    margin-top: 100px;
+    display: flex;
+}
+.typo{
+    border: none;
+    outline: none;
+}
+.todo-text{
+    width: 400px;
+    background-color: var(--formColor);
+    padding: 13px 0px 10px 7px;
+    font-size: 20px;
+    color: var(--colorWhite);
+}
+.todo-text::placeholder{
+    font-size: 20px;
+}
+.btn-submit{
+    background-color: var(--submitBtnColor);
+    color: var(--submitBtnTextColor);
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0px 10px;
+    border-radius: 1px;
+    font-size: 15px;
+}
+.btn-submit,i{
+    cursor: pointer;
+}
+.btn-submit:hover,i:hover {
+    transform: scale(1.11);
+}
+.list-container{
+    width: 477px;
+    margin-top: 50px;
+}
+li{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--listColor);
+    margin-bottom: 10px;
+    color: var(--colorWhite);
+}
+p{
+    flex: 1;
+    padding-left: 7px;
+}
+i{
+    padding: 10px 7px;
+    background-color: #2d283e;
+    color: gray;
+}
+i:hover{
+    background-color: gray;
+    color: black;
+}
+.animate{
+    transition: all 700ms;
+    transform: translateX(200px);
+    opacity: 0;
+} 
+.fa-adjust{
+    margin: 20px;
+    padding: 5px;
+    border-radius: 48%;
+    position: absolute;
+    right: 10;
+}
+.fa-adjust:hover{
+    transform: scale(1);
+}
+.fa-adjust:hover::after{
+    left: -90;
+    opacity: 1;
+}
+.fa-adjust::after{
+    font-family: cursive;
+    content: 'Light Mode';
+    color: var(--colorWhite);
+    position: absolute;
+    width: 90px;
+    left: 60;
+    z-index: -1;
+    transition: all 500ms;
+    opacity: 0;
+}
+
+@media (max-width: 500px){
+    .list-container{
+        width: 95vw;
+    }
+    .todo-text{
+        width: 78vw;
+    }
+}
